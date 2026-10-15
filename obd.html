@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OBD(車の自己診断)とOBD検査|ONEV ALLEY STATION</title>
+<meta name="description" content="OBD(車載式故障診断装置)のしくみ、故障コードの読み方、2024年10月から始まった車検のOBD検査を初心者向けに解説します。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/obd.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="OBD(車の自己診断)とOBD検査|ONEV ALLEY STATION">
+<meta property="og:description" content="OBD(車載式故障診断装置)のしくみ、故障コードの読み方、2024年10月から始まった車検のOBD検査を初心者向けに解説します。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/obd.html">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "OBD(車の自己診断)とOBD検査", "description": "OBD(車載式故障診断装置)のしくみ、故障コードの読み方、2024年10月から始まった車検のOBD検査を初心者向けに解説します。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/obd.html", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html" aria-current="page">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="breadcrumb" aria-label="現在地"><a href="index.html">ホーム</a><span>/</span>OBD</nav>
+      <span class="eyebrow">03 — OBD</span>
+      <h1>OBD<br><span class="accent">クルマが書く「体調日記」</span></h1>
+      <p class="lead">OBD(オービーディー)は、車が自分自身の調子をチェックし、異常があれば記録しておくしくみです。整備士はこの記録を専用の機械で読み出して、故障の場所を探します。2024年10月からは、日本の車検でもこの記録が調べられるようになりました。</p>
+      <div class="abbr-box">
+        <div class="piece"><b>O</b><span>On</span><em>〜に</em></div>
+        <div class="piece"><b>B</b><span>Board</span><em>載せた</em></div>
+        <div class="piece"><b>D</b><span>Diagnostics</span><em>診断</em></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg viewBox="0 0 320 220" role="img" aria-label="メーターの警告灯のイラスト">
+        <circle cx="160" cy="120" r="90" fill="#f6f7f9" stroke="#e3e7ee" stroke-width="2"/>
+        <g stroke="#cfd6e2" stroke-width="3" stroke-linecap="round"><path d="M90 140l12-6M98 90l12 6M130 60l6 12M190 60l-6 12M222 90l-12 6M230 140l-12-6"/></g>
+        <path d="M160 120 L208 84" stroke="#0e1726" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="160" cy="120" r="7" fill="#0e1726"/>
+        <g transform="translate(135 150)"><rect width="50" height="30" rx="6" fill="#fdeeed"/><path d="M12 22h26v-8l-4-4h-6l-2-3h-6l-2 3h-2l-4 4z" fill="#e0524d"/></g>
+        <text x="160" y="210" text-anchor="middle" font-size="12" fill="#8a94a6">異常を見つけると警告灯が点く</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<nav class="page-tabs" aria-label="このページの目次"><ul>
+  <li><a href="#about">しくみ</a></li>
+  <li><a href="#history">歴史</a></li>
+  <li><a href="#connector">差し込み口</a></li>
+  <li><a href="#dtc">故障コード</a></li>
+  <li><a href="#inspection">OBD検査</a></li>
+  <li><a href="#odi">ODIとの違い</a></li>
+  <li><a href="#handling">使い方</a></li>
+  <li><a href="#refs">参考資料</a></li>
+</ul></nav>
+
+<section class="section" id="about">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">01 — HOW IT WORKS</span>
+      <h2>ECUが、自分で自分を見張っている。</h2>
+      <p>車の<a href="ecu.html">ECU</a>は、運転を制御しながら同時に「センサーの値がおかしくないか」「指示どおりに部品が動いているか」をチェックしています。異常を見つけると、</p>
+      <ol>
+        <li>メーターの<b>警告灯</b>を点けて運転者に知らせる</li>
+        <li>何が起きたかを<b><span class="term" data-term="DTC">故障コード</span></b>として記録する</li>
+      </ol>
+      <p>という2つのことを行います。この機能全体をOBDと呼びます。</p>
+    </div>
+    <div class="reveal delay-1">
+      <div class="keypoint"><strong>ひとことで言うと</strong><p>OBD = 車に内蔵された「自己診断機能」と、その結果を外から読み出すための「共通の決まり」。</p></div>
+      <div class="keypoint warn"><strong>よくある誤解</strong><p>「OBD2」「OBD-II」は、OBDの第2世代の規格のこと。今の車で「OBD」といえば、ふつうはこの第2世代を指します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="history">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">02 — HISTORY</span>
+      <h2>もともとは「排ガス」を見張るため。</h2>
+      <p>OBDは、アメリカやヨーロッパで、排出ガスに関係する装置の故障を見逃さないための仕組みとして義務化されました。日本では、自動ブレーキなどの先進安全技術が広く普及したことを受けて、車検での活用が始まりました。</p>
+    </div>
+    <ul class="timeline reveal delay-1">
+      <li><span class="year">1996</span><p>アメリカで、販売されるすべての乗用車・小型トラックにOBD-IIが義務化。</p></li>
+      <li><span class="year">2001 / 2004</span><p>EU(ヨーロッパ連合)で、ガソリン車(2001年)、ディーゼル車(2004年)に欧州版OBDが義務化。</p></li>
+      <li><span class="year">2023.10</span><p>日本で車検のOBD検査の「プレ運用(慣らし期間)」開始。</p></li>
+      <li class="hl"><span class="year">2024.10</span><p>日本で国産車のOBD検査が本格スタート。</p></li>
+      <li class="hl"><span class="year">2025.10</span><p>輸入車のOBD検査がスタート。</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="connector">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">03 — CONNECTOR</span>
+      <h2>運転席の足元にある、16本の穴。</h2>
+      <p>OBD-II対応の車には、形と各ピン(穴)の役割が決められた<b>16ピンのコネクター</b>があり、ふつうはハンドルの下あたりにあります。ピンに触れると役割が表示されます(番号が書かれていないピンは、メーカーが自由に使えるピンです)。</p>
+    </div>
+    <div class="split">
+      <div class="demo reveal">
+        <svg id="obd-conn" viewBox="0 0 440 200" role="img" aria-label="OBD-IIコネクターの16ピン配置">
+          <path d="M30 40 H410 L380 170 H60 Z" fill="#0e1726" rx="16"/>
+          <g id="obd-pins"></g>
+          <text x="220" y="192" text-anchor="middle" font-size="11" fill="#8a94a6">差し込み口を正面から見た図(上段1〜8、下段9〜16)</text>
+        </svg>
+      </div>
+      <div class="reveal delay-1">
+        <div id="pin-info" class="demo-out" aria-live="polite">ピンに触れてみましょう。とくに大事なのは<b>4・5番(アース)</b>、<b>6・14番(CAN通信)</b>、<b>16番(バッテリー電源)</b>です。</div>
+        <div class="keypoint violet mt-32"><strong>ポイント</strong><p>16番には常にバッテリーの電気が来ています。金属の工具などでピン同士をつなげてしまう(ショートさせる)と危険なので、むやみに触らないようにしましょう。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="dtc">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">04 — TROUBLE CODE</span>
+      <h2>故障コードを、読み解いてみよう。</h2>
+      <p>故障コードは「英字1文字+数字4ケタ」。それぞれのケタに意味があります。例を選ぶか、自分で入力してみてください。</p>
+    </div>
+    <div class="demo reveal" style="color:var(--ink)">
+      <div class="search-box" style="margin-top:0">
+        <input id="dtc-input" type="text" value="P0301" maxlength="5" aria-label="故障コード" style="text-transform:uppercase;font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.2em">
+        <button id="dtc-btn" type="button">読み解く</button>
+      </div>
+      <div class="chips"><button type="button" class="chip dtc-ex">P0301</button><button type="button" class="chip dtc-ex">P0171</button><button type="button" class="chip dtc-ex">C0035</button><button type="button" class="chip dtc-ex">B1000</button><button type="button" class="chip dtc-ex">U0100</button></div>
+      <div id="dtc-out" class="grid grid-4"></div>
+      <p class="muted" style="margin-top:16px">※ 2ケタ目が「1」のコードはメーカー独自の意味を持つため、正確な内容は各メーカーの整備書で確認します。ここでは共通ルールに基づく大まかな意味を表示しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inspection">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">05 — INSPECTION</span>
+      <h2>2024年から始まった「OBD検査」とは。</h2>
+      <p>これまでの車検は、ブレーキの効きや排ガスなど「機械としての状態」が中心でした。警告灯が点いていても、基準を満たしていれば合格になることがありました。OBD検査では、車検時に専用の<span class="term" data-term="スキャンツール">スキャンツール</span>をつなぎ、<b>決められた重要な故障コードが記録されていないか</b>を確認します。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="icon red">なぜ</div><h3>導入された理由</h3><p>自動ブレーキなどの先進安全技術は事故を減らす一方、故障すると誤作動して事故につながるおそれがあるため。電子装置の故障を車検で見逃さないことが目的です。</p></div>
+      <div class="card reveal delay-1"><div class="icon">対象</div><h3>対象になる車</h3><p>国産車:2021年10月以降に新しく型式指定を受けた新型車(フルモデルチェンジ車など)。<br>輸入車:2022年以降の新型車。<br>それ以前から作られている車は対象外です。</p></div>
+      <div class="card reveal delay-2"><div class="icon violet">開始</div><h3>始まった時期</h3><p>国産車:2024年10月1日から。<br>輸入車:2025年10月1日から。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="odi">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">COLUMN</span>
+      <h2>「ODI」は、まったく別の言葉。</h2>
+      <p>OBDと1文字ちがいの「<span class="term" data-term="ODI">ODI</span>」は、車ではなく<b>パソコンのネットワーク</b>の用語です。1989年にアップルとノベルという会社が共同で発表した、ネットワークカード(LANにつなぐ部品)とソフトの間の受け渡しの決まりです。</p>
+      <p>マイクロソフトなどが作った「NDIS」という規格と同じ役割を持ち、通信を7つの階層で整理した<span class="term" data-term="OSI参照モデル">OSI参照モデル</span>の第2層(データリンク層)で働きます。現在はほとんど使われていない、歴史上の規格です。</p>
+      <p><a href="hub.html#network">ネットワークのハブ</a>のページで、ネットワークの基本もあわせて学べます。</p>
+    </div>
+    <div class="table-wrap reveal delay-1">
+      <table style="min-width:0">
+        <tr><th></th><th>OBD</th><th>ODI</th></tr>
+        <tr><td><b>分野</b></td><td>自動車</td><td>パソコンのネットワーク</td></tr>
+        <tr><td><b>意味</b></td><td>車載式故障診断</td><td>ネットワークカード用の接続ルール</td></tr>
+        <tr><td><b>今</b></td><td>現役(車検でも使用)</td><td>ほぼ使われていない</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="handling">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">06 — HOW TO USE</span>
+      <h2>スキャンツールのつなぎ方(基本の流れ)。</h2>
+      <p>機器によって細かい手順は違います。必ず使う機器の取扱説明書を確認してください。</p>
+    </div>
+    <ol class="steps reveal">
+      <li><b>エンジンを止め、イグニッション(電源)をOFFにする</b><span>電源が入ったまま抜き差しすると、機器や車に負担がかかることがあります。</span></li>
+      <li><b>運転席の足元でOBDコネクターを探す</b><span>多くはハンドルの下付近。カバーの中に隠れていることもあります。</span></li>
+      <li><b>向きを確かめて、まっすぐ奥まで差し込む</b><span>台形の形なので、逆向きには入りません。無理に押し込まないこと。</span></li>
+      <li><b>イグニッションをONにして、ツールの画面に従う</b><span>故障コードを読み出し、内容を<b>必ず記録</b>してから次の作業に進みます。</span></li>
+      <li><b>原因を直してからコードを消す</b><span>原因が残ったまま消しても、また記録されて警告灯が点きます。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section alt" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://bsrweb.jp/article/482665" target="_blank" rel="noopener">BSR「OBD検査はいつから?対象車両や整備工場に必要な準備を解説」</a></li>
+      <li><a href="https://kuruma-news.jp/post/845814" target="_blank" rel="noopener">くるまのニュース「10月から始まった“新たな車検”…OBD検査の正体とは」</a></li>
+      <li><a href="https://bestcarweb.jp/feature/column/329966?prd=2" target="_blank" rel="noopener">ベストカーWeb(国土交通省資料にもとづくOBD検査の概要)</a></li>
+      <li><a href="https://www.wikipedia.org/wiki/CAN_Bus" target="_blank" rel="noopener">Wikipedia "CAN bus"(OBD-IIの米国・EUでの義務化時期)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Open_Data-Link_Interface" target="_blank" rel="noopener">Wikipedia "Open Data-Link Interface"</a></li>
+      <li><a href="https://sunsite3.icm.edu.pl/packages/novell/FAQ/netlab/odi-ipx.txt" target="_blank" rel="noopener">Novell Labs "The Open Data-Link Interface (ODI) Overview"</a></li>
+      <li>SAE J1962(OBD-IIコネクター)/ SAE J2012(故障コードの体系)— 米国自動車技術者協会の規格</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><a href="ecu.html"><small>← PREV</small>ECU</a><a class="next" href="gyro.html"><small>NEXT →</small>ジャイロ</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/obd.js"></script>
+</body>
+</html>

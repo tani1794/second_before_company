@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCU(マイコン)とは?しくみと扱い方|ONEV ALLEY STATION</title>
+<meta name="description" content="MCU(マイクロコントローラー=マイコン)の中身・動き方・扱い方を、専門用語を日本語に置きかえて初心者向けに解説します。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/mcu.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="MCU(マイコン)とは?しくみと扱い方|ONEV ALLEY STATION">
+<meta property="og:description" content="MCU(マイクロコントローラー=マイコン)の中身・動き方・扱い方を、専門用語を日本語に置きかえて初心者向けに解説します。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/mcu.html">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "MCU(マイコン)とは?しくみと扱い方", "description": "MCU(マイクロコントローラー=マイコン)の中身・動き方・扱い方を、専門用語を日本語に置きかえて初心者向けに解説します。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/mcu.html", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html" aria-current="page">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="breadcrumb" aria-label="現在地"><a href="index.html">ホーム</a><span>/</span>MCU</nav>
+      <span class="eyebrow">01 — MCU</span>
+      <h1>MCU<br><span class="accent">指先サイズのコンピューター</span></h1>
+      <p class="lead">MCU(エムシーユー)は、パソコンの中身を1つの小さなチップに詰め込んだ部品です。日本では「マイコン」と呼ばれることがほとんど。車・家電・おもちゃまで、電気で動く「かしこい機械」のほぼすべてに入っています。</p>
+      <div class="abbr-box">
+        <div class="piece"><b>M</b><span>Micro</span><em>とても小さい</em></div>
+        <div class="piece"><b>C</b><span>Controller</span><em>制御するもの</em></div>
+        <div class="piece"><b>U</b><span>Unit</span><em>ひとまとまりの装置</em></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg viewBox="0 0 320 260" role="img" aria-label="マイコンチップのイラスト">
+        <defs><linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2740"/><stop offset="1" stop-color="#0e1726"/></linearGradient></defs>
+        <g stroke="#b9c3d6" stroke-width="4" stroke-linecap="round">
+          <path d="M100 40v-20M130 40v-20M160 40v-20M190 40v-20M220 40v-20"/>
+          <path d="M100 220v20M130 220v20M160 220v20M190 220v20M220 220v20"/>
+          <path d="M70 70h-20M70 100h-20M70 130h-20M70 160h-20M70 190h-20"/>
+          <path d="M250 70h20M250 100h20M250 130h20M250 160h20M250 190h20"/>
+        </g>
+        <rect x="70" y="40" width="180" height="180" rx="14" fill="url(#chip)"/>
+        <circle cx="92" cy="62" r="5" fill="#3a4a68"/>
+        <text x="160" y="125" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond, serif" font-size="34" letter-spacing="4">MCU</text>
+        <text x="160" y="150" text-anchor="middle" fill="#8a94a6" font-size="11" letter-spacing="2">CPU・MEMORY・I/O</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<nav class="page-tabs" aria-label="このページの目次"><ul>
+  <li><a href="#about">ひとことで</a></li>
+  <li><a href="#inside">中身を見る</a></li>
+  <li><a href="#work">動き方</a></li>
+  <li><a href="#compare">CPUとの違い</a></li>
+  <li><a href="#handling">扱い方</a></li>
+  <li><a href="#refs">参考資料</a></li>
+</ul></nav>
+
+<section class="section" id="about">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">01 — IN A WORD</span>
+      <h2>「決まった仕事を、休まず正確に」こなす専門家。</h2>
+      <p>パソコンは、文章作成・動画・ゲームなど何でもこなす「なんでも屋」です。一方MCUは、たとえば「室温を測って、暑ければファンを回す」といった<b>決められた仕事だけ</b>を、何年でも休まず繰り返す「専門職人」です。</p>
+      <p>その分、小さく・安く・電気をあまり使わないのが特長。だから1台の車に何十個も載せることができるのです。</p>
+    </div>
+    <div class="reveal delay-1">
+      <div class="keypoint"><strong>ひとことで言うと</strong><p>MCU =「考える部分」「覚える部分」「外とつながる部分」を1つにまとめた、小さなコンピューター。</p></div>
+      <div class="keypoint violet"><strong>身近な例</strong><p>炊飯器(温度を見て火力を調整)、エアコン(リモコンの信号を受けて動く)、車のパワーウインドウ(スイッチを押すと窓が動き、挟みこみを検知すると止まる)。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="inside">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">02 — INSIDE</span>
+      <h2>チップの中を、のぞいてみる。</h2>
+      <p>下の図の四角をクリック(スマホはタップ)すると、それぞれの部分の役割が表示されます。</p>
+    </div>
+    <div class="demo reveal">
+      <svg id="mcu-map" viewBox="0 0 760 330" role="img" aria-label="MCUの内部構成図">
+        <rect x="10" y="10" width="740" height="310" rx="22" fill="#f6f7f9" stroke="#cfd6e2" stroke-dasharray="6 6"/>
+        <text x="30" y="40" font-size="13" fill="#8a94a6" letter-spacing="2">MCU(1つのチップ)</text>
+        <g class="mcu-part" data-k="cpu" tabindex="0" role="button"><rect x="290" y="110" width="180" height="110" rx="16" fill="#0e1726"/><text x="380" y="160" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">CPU</text><text x="380" y="186" text-anchor="middle" fill="#b9c3d6" font-size="13">考える・計算する</text></g>
+        <g class="mcu-part" data-k="rom" tabindex="0" role="button"><rect x="60" y="60" width="170" height="80" rx="14" fill="#fff" stroke="#3a6fe0" stroke-width="2"/><text x="145" y="96" text-anchor="middle" font-size="17" font-weight="700">ROM / フラッシュ</text><text x="145" y="120" text-anchor="middle" font-size="12" fill="#4a5568">手順書を保管</text></g>
+        <g class="mcu-part" data-k="ram" tabindex="0" role="button"><rect x="60" y="190" width="170" height="80" rx="14" fill="#fff" stroke="#3a6fe0" stroke-width="2"/><text x="145" y="226" text-anchor="middle" font-size="17" font-weight="700">RAM</text><text x="145" y="250" text-anchor="middle" font-size="12" fill="#4a5568">作業机</text></g>
+        <g class="mcu-part" data-k="io" tabindex="0" role="button"><rect x="530" y="40" width="170" height="70" rx="14" fill="#fff" stroke="#7b5cf0" stroke-width="2"/><text x="615" y="72" text-anchor="middle" font-size="17" font-weight="700">I/O(入出力)</text><text x="615" y="94" text-anchor="middle" font-size="12" fill="#4a5568">外とつながる足</text></g>
+        <g class="mcu-part" data-k="adc" tabindex="0" role="button"><rect x="530" y="130" width="170" height="70" rx="14" fill="#fff" stroke="#7b5cf0" stroke-width="2"/><text x="615" y="162" text-anchor="middle" font-size="17" font-weight="700">A/D変換</text><text x="615" y="184" text-anchor="middle" font-size="12" fill="#4a5568">量を数字に</text></g>
+        <g class="mcu-part" data-k="timer" tabindex="0" role="button"><rect x="530" y="220" width="80" height="70" rx="14" fill="#fff" stroke="#e0524d" stroke-width="2"/><text x="570" y="261" text-anchor="middle" font-size="14" font-weight="700">タイマー</text></g>
+        <g class="mcu-part" data-k="com" tabindex="0" role="button"><rect x="620" y="220" width="80" height="70" rx="14" fill="#fff" stroke="#e0524d" stroke-width="2"/><text x="660" y="261" text-anchor="middle" font-size="14" font-weight="700">通信</text></g>
+        <g stroke="#cfd6e2" stroke-width="2" fill="none"><path d="M230 100h40v40h20M230 230h40v-40h20M470 165h30v-90h30M500 165h30M500 165v90h30M500 255h90"/></g>
+      </svg>
+      <div id="mcu-info" class="demo-out" aria-live="polite">四角をクリックしてみましょう。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">03 — HOW IT WORKS</span>
+      <h2>「入力 → 判断 → 出力」をくり返す。</h2>
+      <p>MCUの仕事は、どんなに複雑でもこの3段階の組み合わせです。温度でファンを回す例を、スライダーで動かしてみましょう。</p>
+    </div>
+    <div class="split">
+      <div class="demo reveal">
+        <svg id="fan-demo" viewBox="0 0 480 200" role="img" aria-label="温度センサーとファンの動作例">
+          <g font-size="13" text-anchor="middle">
+            <rect x="10" y="50" width="120" height="100" rx="14" fill="#fdeeed"/><text x="70" y="80" font-weight="700">① 入力</text><text x="70" y="104" fill="#4a5568">温度センサー</text><text id="fd-temp" x="70" y="132" font-size="20" font-weight="700" fill="#e0524d">25℃</text>
+            <rect x="180" y="50" width="120" height="100" rx="14" fill="#edf2fd"/><text x="240" y="80" font-weight="700">② 判断</text><text x="240" y="104" fill="#4a5568">MCU</text><text id="fd-judge" x="240" y="132" font-size="13" font-weight="700" fill="#3a6fe0">30℃未満</text>
+            <rect x="350" y="50" width="120" height="100" rx="14" fill="#f2effe"/><text x="410" y="80" font-weight="700">③ 出力</text>
+          </g>
+          <g id="fd-fan" transform="translate(410 122)"><g><path d="M0 0 C-4 -18 6 -22 10 -14 Z M0 0 C18 -4 22 6 14 10 Z M0 0 C4 18 -6 22 -10 14 Z M0 0 C-18 4 -22 -6 -14 -10 Z" fill="#7b5cf0"/><circle r="3" fill="#0e1726"/></g></g>
+          <g stroke="#cfd6e2" stroke-width="2"><path d="M130 100h50M300 100h50"/></g>
+        </svg>
+        <div class="demo-controls"><label>室温 <input type="range" id="fd-range" min="10" max="45" value="25"></label></div>
+        <div id="fd-out" class="demo-out">ファンは止まっています。</div>
+      </div>
+      <div class="reveal delay-1">
+        <h3>中で動いているプログラム(手順書)</h3>
+        <p>MCUのROMには、次のような手順が書き込まれています。これを1秒間に何百回・何千回とくり返しています。</p>
+        <div class="table-wrap"><table style="min-width:0">
+          <tr><th style="width:80px">順番</th><th>やっていること</th></tr>
+          <tr><td>1</td><td>温度センサーの電圧を<span class="term" data-term="ADC">A/D変換</span>で数字にする</td></tr>
+          <tr><td>2</td><td>その数字が「30℃」以上かどうか比べる</td></tr>
+          <tr><td>3</td><td>以上なら、ファンにつながった<span class="term" data-term="I/O">出力ピン</span>をON</td></tr>
+          <tr><td>4</td><td>未満ならOFF。1に戻る</td></tr>
+        </table></div>
+        <p class="muted mt-32">※ 車のECUの中のMCUも、同じ考え方で「エンジンへの燃料の量」や「ブレーキの強さ」を決めています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">04 — COMPARE</span>
+      <h2>パソコンのCPUと、何が違う?</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <tr><th></th><th>MCU(マイコン)</th><th>パソコンのCPU</th></tr>
+        <tr><td><b>得意なこと</b></td><td>決まった仕事を確実に・すぐに反応してこなす</td><td>いろいろなソフトを高速に動かす</td></tr>
+        <tr><td><b>メモリー</b></td><td>チップの中に入っている</td><td>別の部品(メモリーカード)として外に付ける</td></tr>
+        <tr><td><b>消費電力</b></td><td>とても少ない</td><td>多い(冷却ファンが必要なことも)</td></tr>
+        <tr><td><b>大きさ・価格</b></td><td>小さく安い → たくさん使える</td><td>大きく高価</td></tr>
+        <tr><td><b>使われる場所</b></td><td>車のECU、家電、リモコン など</td><td>パソコン、サーバー</td></tr>
+      </table>
+    </div>
+    <div class="keypoint violet reveal mt-32"><strong>MCUとECUの関係</strong><p>MCUは「部品(チップ)」、ECUはMCUに電源回路・保護回路・コネクターなどを組み合わせて箱に入れた「装置」です。<a href="ecu.html">ECUのページ</a>で詳しく見てみましょう。</p></div>
+  </div>
+</section>
+
+<section class="section" id="handling">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">05 — HANDLING</span>
+      <h2>はじめて扱うときの4つの約束。</h2>
+      <p>MCUは目に見えないダメージで壊れることがあります。作業の前に、次のことを習慣にしましょう。職場のルールがある場合は、そちらを優先してください。</p>
+    </div>
+    <ol class="steps reveal">
+      <li><b>静電気を逃がしてから触る</b><span>冬場の「パチッ」は数千ボルト。人が感じない小さな静電気でもチップは壊れることがあります。<span class="term" data-term="静電気対策">静電気防止リストバンド</span>や導電マットを使いましょう。</span></li>
+      <li><b>ピン(足)や端子に素手で触らない</b><span>基板はふちを持ちます。皮脂やサビの原因にもなります。</span></li>
+      <li><b>電源を切ってから抜き差しする</b><span>電気が流れた状態で部品やケーブルを抜き差しすると、思わぬ電気が流れて壊れることがあります。</span></li>
+      <li><b>運ぶときは静電気防止袋に入れる</b><span>銀色や半透明ピンクの専用袋に入れます。普通のビニール袋は静電気を起こしやすいので避けます。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section alt" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://monoist.itmedia.co.jp/mn/articles/0901/23/news133.html" target="_blank" rel="noopener">MONOist「電子部品の信頼性とカーエレクトロニクスの将来」</a></li>
+      <li><a href="https://www.slashgear.com/2257973/when-why-did-automakers-switch-to-can-bus-systems-for-vehicles/" target="_blank" rel="noopener">SlashGear "When (And Why) Did Automakers Switch To CAN Bus Systems"(各ECUにマイコンが入る構成について)</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><a href="index.html"><small>← PREV</small>ホーム</a><a class="next" href="ecu.html"><small>NEXT →</small>ECU</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mcu.js"></script>
+</body>
+</html>

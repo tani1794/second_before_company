@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハブとは?ネットワーク・USB・ハブモーター|ONEV ALLEY STATION</title>
+<meta name="description" content="ネットワークのハブ、USBハブ、車輪に組み込むハブモーター。3つの「ハブ」の違いと使い方を初心者向けに解説します。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/hub.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="ハブとは?ネットワーク・USB・ハブモーター|ONEV ALLEY STATION">
+<meta property="og:description" content="ネットワークのハブ、USBハブ、車輪に組み込むハブモーター。3つの「ハブ」の違いと使い方を初心者向けに解説します。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/hub.html">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ハブとは?ネットワーク・USB・ハブモーター", "description": "ネットワークのハブ、USBハブ、車輪に組み込むハブモーター。3つの「ハブ」の違いと使い方を初心者向けに解説します。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/hub.html", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html" aria-current="page">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="breadcrumb" aria-label="現在地"><a href="index.html">ホーム</a><span>/</span>ハブ</nav>
+      <span class="eyebrow">05 — HUB</span>
+      <h1>ハブ<br><span class="accent">同じ名前の、3つの別物</span></h1>
+      <p class="lead">英語の「hub(ハブ)」は「中心・集まる場所」という意味です。空港の「ハブ空港」と同じ言葉。電子機器の現場では、<b>ネットワークのハブ</b>、<b>USBハブ</b>、<b>ハブモーター</b>の3つがよく出てきます。会話の中でどれのことか、取り違えないようにしましょう。</p>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg viewBox="0 0 320 240" role="img" aria-label="中心から放射状に線が伸びるイラスト">
+        <g stroke="#cfd6e2" stroke-width="2"><path d="M160 120L60 50M160 120L260 50M160 120L60 190M160 120L260 190M160 120L160 30M160 120L160 210"/></g>
+        <g fill="#fff" stroke-width="2"><circle cx="60" cy="50" r="16" stroke="#3a6fe0"/><circle cx="260" cy="50" r="16" stroke="#3a6fe0"/><circle cx="60" cy="190" r="16" stroke="#7b5cf0"/><circle cx="260" cy="190" r="16" stroke="#7b5cf0"/><circle cx="160" cy="30" r="16" stroke="#e0524d"/><circle cx="160" cy="210" r="16" stroke="#e0524d"/></g>
+        <circle cx="160" cy="120" r="34" fill="#0e1726"/><text x="160" y="126" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond, serif" font-size="20" letter-spacing="3">HUB</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<nav class="page-tabs" aria-label="このページの目次"><ul>
+  <li><a href="#three">3つのハブ</a></li>
+  <li><a href="#refs">参考資料</a></li>
+</ul></nav>
+
+<section class="section" id="three">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">01 — THREE HUBS</span>
+      <h2>タブで切り替えて、見比べよう。</h2>
+    </div>
+    <div class="tabs" id="hub-tabs">
+      <div class="tab-list" role="tablist" aria-label="ハブの種類">
+        <button class="tab-btn" role="tab" id="t-net" aria-controls="network-panel" data-hash="network" aria-selected="true">ネットワークのハブ</button>
+        <button class="tab-btn" role="tab" id="t-usb" aria-controls="usb-panel" data-hash="usb" aria-selected="false" tabindex="-1">USBハブ</button>
+        <button class="tab-btn" role="tab" id="t-motor" aria-controls="motor-panel" data-hash="motor" aria-selected="false" tabindex="-1">ハブモーター</button>
+      </div>
+
+      <!-- ネットワーク -->
+      <div class="tab-panel" role="tabpanel" id="network-panel" aria-labelledby="t-net">
+        <div class="split">
+          <div>
+            <h3>LANの「分岐点」</h3>
+            <p>複数のパソコンやプリンターを<span class="term" data-term="LAN">LAN</span>ケーブルでつなぐときの中継装置です。昔ながらの「ハブ(リピーターハブ)」と、今の主流の「<span class="term" data-term="スイッチングハブ">スイッチングハブ</span>」があります。</p>
+            <div class="table-wrap"><table style="min-width:0">
+              <tr><th></th><th>ハブ(昔)</th><th>スイッチ(今)</th></tr>
+              <tr><td><b>送り方</b></td><td>届いたデータを<b>全部の口</b>にコピー</td><td>宛先の機器がいる<b>口だけ</b>に送る</td></tr>
+              <tr><td><b>働く階層</b></td><td>第1層(電気信号)</td><td>第2層(データリンク層)</td></tr>
+              <tr><td><b>ムダ</b></td><td>多い(関係ない機器にも届く)</td><td>少ない</td></tr>
+            </table></div>
+            <p class="muted mt-32">※ 今は「ハブ」と言っても、実際はスイッチングハブのことがほとんどです。</p>
+          </div>
+          <div class="demo">
+            <svg id="net-demo" viewBox="0 0 360 300" role="img" aria-label="ハブとスイッチのデータの流れ方">
+              <g stroke="#cfd6e2" stroke-width="2"><path d="M180 150L60 60M180 150L300 60M180 150L60 240M180 150L300 240"/></g>
+              <g font-size="12" text-anchor="middle">
+                <g><rect x="25" y="35" width="70" height="44" rx="8" fill="#fff" stroke="#3a6fe0" stroke-width="2"/><text x="60" y="62" font-weight="700">PC A</text></g>
+                <g><rect x="265" y="35" width="70" height="44" rx="8" fill="#fff" stroke="#cfd6e2" stroke-width="2"/><text x="300" y="62">PC B</text></g>
+                <g><rect x="25" y="220" width="70" height="44" rx="8" fill="#fff" stroke="#cfd6e2" stroke-width="2"/><text x="60" y="247">プリンター</text></g>
+                <g><rect id="net-dst" x="265" y="220" width="70" height="44" rx="8" fill="#fff" stroke="#e0524d" stroke-width="2"/><text x="300" y="247" font-weight="700">PC C(宛先)</text></g>
+              </g>
+              <rect x="140" y="128" width="80" height="44" rx="10" fill="#0e1726"/><text id="net-label" x="180" y="155" text-anchor="middle" fill="#fff" font-size="13">スイッチ</text>
+              <g id="net-packets"></g>
+            </svg>
+            <div class="demo-controls">
+              <div class="tab-list" style="margin:0" role="radiogroup" aria-label="装置の種類">
+                <button type="button" class="seg-btn net-mode" data-mode="hub" aria-selected="false">ハブ(昔)</button>
+                <button type="button" class="seg-btn net-mode" data-mode="switch" aria-selected="true">スイッチ(今)</button>
+              </div>
+              <button class="btn" id="net-send" type="button">PC A から PC C へ送信</button>
+            </div>
+            <div id="net-out" class="demo-out">装置を選んで、送信してみましょう。</div>
+          </div>
+        </div>
+        <div class="keypoint violet mt-48"><strong>関連用語:ODI</strong><p>ネットワークの歴史に出てくる「<span class="term" data-term="ODI">ODI</span>」は、1989年にアップルとノベルが発表した、ネットワークカードとソフトをつなぐための決まりです。スイッチと同じ第2層に関わる規格ですが、現在はほとんど使われていません。車の「OBD」とは別物です(<a href="obd.html#odi">くわしく</a>)。</p></div>
+        <h3 class="mt-48">扱うときのポイント</h3>
+        <ol class="steps">
+          <li><b>ケーブルはツメを押してから抜く</b><span>ツメが折れると、抜けやすく接続が不安定になります。</span></li>
+          <li><b>同じハブの2つの口をケーブルで直接つながない</b><span>データがぐるぐる回り続ける「ループ」が起き、ネットワーク全体が止まることがあります。</span></li>
+          <li><b>ランプ(LED)で状態を確認する</b><span>点灯=つながっている、点滅=通信中が一般的。意味は機器の説明書で確認します。</span></li>
+        </ol>
+      </div>
+
+      <!-- USB -->
+      <div class="tab-panel" role="tabpanel" id="usb-panel" aria-labelledby="t-usb" hidden>
+        <div class="split">
+          <div>
+            <h3>USBの差し込み口を「増やす」</h3>
+            <p><span class="term" data-term="USBハブ">USBハブ</span>は、パソコンのUSBの口が足りないときに使う分岐装置です。1つの口を、2つ・4つ・7つ…と増やせます。ただし、増えるのは「口の数」だけ。パソコンから出てくる<b>電気の量や通信の速さは、つないだ機器で分け合う</b>ことになります。</p>
+            <div class="grid grid-2">
+              <div class="card"><span class="badge">バスパワー</span><h3 style="margin-top:10px;font-size:17px">パソコンから電気をもらう</h3><p>ACアダプター不要で手軽。ただし電気の量に限りがあるので、マウスやキーボードなど省電力な機器向け。</p></div>
+              <div class="card"><span class="badge violet">セルフパワー</span><h3 style="margin-top:10px;font-size:17px">自分で電源をとる</h3><p>ACアダプターから電気を供給。外付けHDDなど、電気を多く使う機器を複数つなぐときに安定します。</p></div>
+            </div>
+          </div>
+          <div class="demo">
+            <h3 style="font-size:17px">体験:電気が足りるか計算してみよう</h3>
+            <p style="font-size:14px;color:var(--ink-2)">バスパワーのハブを、USB 3.x の口(1つあたり最大900mA=0.9アンペアが標準)につないだとします。つなぐ機器を選んでください。</p>
+            <div id="usb-items" class="chips"></div>
+            <div class="bar-track" style="height:20px"><div id="usb-bar" class="bar-fill" style="width:0"></div></div>
+            <div id="usb-out" class="demo-out">機器を選ぶと、合計の電流が表示されます。</div>
+            <p class="muted" style="margin-top:10px">※ 機器の消費電流は一般的な目安です。実際の値は各機器の仕様を確認してください。USB 2.0の口は標準で500mAまでです。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ハブモーター -->
+      <div class="tab-panel" role="tabpanel" id="motor-panel" aria-labelledby="t-motor" hidden>
+        <div class="split">
+          <div>
+            <h3>車輪の中心に、モーターを入れる</h3>
+            <p>車輪の中心の回転する部分を「ハブ」といいます。ここにモーターを組み込み、タイヤを直接回すのが<span class="term" data-term="ハブモーター">ハブモーター</span>(インホイールモーター)です。電動アシスト自転車や電動バイクではすでに広く使われています。</p>
+            <p>一般的な車は、エンジンやモーターの力を、デフ(左右の回転差を吸収する歯車)やドライブシャフト(回転を伝える棒)で車輪まで運びます。ハブモーターなら、これらが不要になります。</p>
+          </div>
+          <div class="demo">
+            <svg viewBox="0 0 360 220" role="img" aria-label="従来の駆動方式とハブモーターの比較図">
+              <g font-size="12" text-anchor="middle">
+                <text x="90" y="20" font-weight="700">従来の方式</text>
+                <rect x="70" y="80" width="40" height="40" rx="6" fill="#0e1726"/><text x="90" y="105" fill="#fff" font-size="10">モーター</text>
+                <path d="M30 100h40M110 100h40" stroke="#8a94a6" stroke-width="5"/>
+                <rect x="10" y="70" width="20" height="60" rx="5" fill="#141a24"/><rect x="150" y="70" width="20" height="60" rx="5" fill="#141a24"/>
+                <text x="90" y="150" fill="#4a5568" font-size="11">シャフトで車輪へ</text>
+                <text x="270" y="20" font-weight="700">ハブモーター</text>
+                <rect x="190" y="70" width="20" height="60" rx="5" fill="#141a24"/><rect x="330" y="70" width="20" height="60" rx="5" fill="#141a24"/>
+                <circle cx="200" cy="100" r="8" fill="#7b5cf0"/><circle cx="340" cy="100" r="8" fill="#7b5cf0"/>
+                <text x="270" y="105" fill="#4a5568" font-size="11">← 空いた空間 →</text>
+                <text x="270" y="150" fill="#4a5568" font-size="11">車輪の中で直接回す</text>
+              </g>
+              <circle cx="200" cy="100" r="8" fill="none" stroke="#7b5cf0" stroke-width="2"><animate attributeName="r" values="8;14;8" dur="1.6s" repeatCount="indefinite"/></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="grid grid-2 mt-48">
+          <div class="card"><span class="badge">メリット</span>
+            <ul>
+              <li>デフやドライブシャフトが不要 → <b>部品が減り、軽くなる</b></li>
+              <li>空いた空間に電池を増やしたり、車内を広くしたりできる</li>
+              <li>4輪の力を1輪ずつ自由に配分できる(左右の力の差で曲がる制御も可能)</li>
+            </ul>
+          </div>
+          <div class="card"><span class="badge red">課題</span>
+            <ul>
+              <li>車輪側が重くなる(<span class="term" data-term="ばね下重量">ばね下重量</span>の増加)→ 乗り心地への影響</li>
+              <li>路面からの衝撃がモーターに直接伝わる</li>
+              <li>地面に近いため、水や異物が入りやすい</li>
+            </ul>
+          </div>
+        </div>
+        <div class="keypoint mt-32"><strong>今の状況</strong><p>乗用車での本格的な採用はまだ限られていますが、ばね下と車体の重さの比率を工夫すれば乗り心地の問題はおさえられるという考え方もあり、国の研究支援を受けた開発や、量産を始めた部品メーカーも出てきています。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://en.wikipedia.org/wiki/Open_Data-Link_Interface" target="_blank" rel="noopener">Wikipedia "Open Data-Link Interface"</a></li>
+      <li><a href="https://sunsite3.icm.edu.pl/packages/novell/FAQ/netlab/odi-ipx.txt" target="_blank" rel="noopener">Novell Labs "The Open Data-Link Interface (ODI) Overview"</a></li>
+      <li><a href="https://bestcarweb.jp/?p=269631" target="_blank" rel="noopener">ベストカーWeb「夢のインホイールモーターの『現在地』」</a></li>
+      <li><a href="https://bestcarweb.jp/feature/column/608204?prd=2" target="_blank" rel="noopener">ベストカーWeb「インホイールモーターの現在地」</a></li>
+      <li><a href="https://www.goo-net.com/magazine/?p=44597" target="_blank" rel="noopener">グーネットマガジン(インホイールモーターの欠点と課題)</a></li>
+      <li><a href="https://motor-fan.jp/?p=39061" target="_blank" rel="noopener">MotorFan(Protean社のインホイールモーター)</a></li>
+      <li><a href="https://response.jp/article/2024/12/10/389563.html" target="_blank" rel="noopener">レスポンス「量産が始まったインホイールモーター」(2024年)</a></li>
+      <li><a href="https://www.astemo.com/en/assets/pdf/corporate/exhibitions/technology2025-yokohama/e_powertrain05.pdf" target="_blank" rel="noopener">Astemo「In-wheel motor」展示資料(NEDO グリーンイノベーション基金)</a></li>
+      <li>USB Implementers Forum:USB 2.0 / USB 3.x 規格(ポートの標準供給電流)</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><a href="gyro.html"><small>← PREV</small>ジャイロ</a><a class="next" href="harness.html"><small>NEXT →</small>ハーネス</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/hub.js"></script>
+</body>
+</html>

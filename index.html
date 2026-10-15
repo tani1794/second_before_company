@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>車の電子機器 はじめての教科書|ONEV ALLEY STATION</title>
+<meta name="description" content="新卒・高卒で初めて電子機器を扱う人のための入門サイト。MCU・ECU・OBD・ジャイロ・ハブ・ワイヤーハーネスを、図と動く解説でやさしく学べます。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="車の電子機器 はじめての教科書|ONEV ALLEY STATION">
+<meta property="og:description" content="新卒・高卒で初めて電子機器を扱う人のための入門サイト。MCU・ECU・OBD・ジャイロ・ハブ・ワイヤーハーネスを、図と動く解説でやさしく学べます。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "車の電子機器 はじめての教科書", "description": "新卒・高卒で初めて電子機器を扱う人のための入門サイト。MCU・ECU・OBD・ジャイロ・ハブ・ワイヤーハーネスを、図と動く解説でやさしく学べます。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html" aria-current="page">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Car Electronics Primer</span>
+      <h1>クルマの中の<br><span class="accent">見えない頭脳</span>を学ぶ。</h1>
+      <p class="lead">今の車は、数十個から100個をこえる小さなコンピューターが協力して走っています。このサイトでは、はじめて電子機器を扱う人に向けて、6つのキーワードを「日本語で」「図で」「動きで」解説します。</p>
+      <p class="hero-read">◎ むずかしい言葉には<span class="term" data-term="ECU">点線</span>が付いています。触れると意味が出ます。</p>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg id="car-map" viewBox="0 0 520 300" role="img" aria-label="車を上から見た図。各部品の位置を示す">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f7f9"/><stop offset="1" stop-color="#e9edf4"/></linearGradient>
+        </defs>
+        <!-- タイヤ -->
+        <g fill="#141a24"><rect x="88" y="22" width="56" height="22" rx="6"/><rect x="88" y="256" width="56" height="22" rx="6"/><rect x="378" y="22" width="56" height="22" rx="6"/><rect x="378" y="256" width="56" height="22" rx="6"/></g>
+        <!-- 車体(左が前) -->
+        <path d="M60 150 C60 70 90 44 170 40 L420 40 C470 42 486 80 486 150 C486 220 470 258 420 260 L170 260 C90 256 60 230 60 150Z" fill="url(#body)" stroke="#cfd6e2" stroke-width="2"/>
+        <path d="M160 70 L200 62 L200 238 L160 230 C150 200 150 100 160 70Z" fill="#dfe6f2"/>
+        <path d="M392 72 L430 80 C440 110 440 190 430 220 L392 228Z" fill="#dfe6f2"/>
+        <rect x="210" y="70" width="170" height="160" rx="18" fill="#fff" stroke="#e3e7ee"/>
+        <!-- 座席 -->
+        <g fill="#eef1f6"><rect x="228" y="82" width="46" height="52" rx="10"/><rect x="228" y="166" width="46" height="52" rx="10"/><rect x="310" y="82" width="56" height="136" rx="12"/></g>
+        <!-- ワイヤーハーネス(流れる線) -->
+        <path id="harness-path" d="M118 150 L180 150 L180 100 L300 100 L300 60 M180 150 L180 200 L410 200 L410 248 M300 100 L410 100 L410 52 M180 150 L118 52 M118 150 L118 248" fill="none" stroke="#7b5cf0" stroke-width="2.5" stroke-dasharray="6 6" opacity=".7">
+          <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1s" repeatCount="indefinite"/>
+        </path>
+        <!-- ホットスポット -->
+        <g class="hotspot" data-key="ecu" transform="translate(118 150)" tabindex="0" role="button" aria-label="ECU"><circle class="ring" r="14" fill="#3a6fe0" opacity=".35"/><circle r="9" fill="#3a6fe0"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">E</text></g>
+        <g class="hotspot" data-key="mcu" transform="translate(180 150)" tabindex="0" role="button" aria-label="MCU"><circle class="ring" r="14" fill="#3a6fe0" opacity=".35"/><circle r="9" fill="#3a6fe0"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">M</text></g>
+        <g class="hotspot" data-key="obd" transform="translate(196 92)" tabindex="0" role="button" aria-label="OBD"><circle class="ring" r="14" fill="#e0524d" opacity=".35"/><circle r="9" fill="#e0524d"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">O</text></g>
+        <g class="hotspot" data-key="gyro" transform="translate(292 150)" tabindex="0" role="button" aria-label="ジャイロ"><circle class="ring" r="14" fill="#7b5cf0" opacity=".35"/><circle r="9" fill="#7b5cf0"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">G</text></g>
+        <g class="hotspot" data-key="hub" transform="translate(406 267)" tabindex="0" role="button" aria-label="ハブ"><circle class="ring" r="14" fill="#7b5cf0" opacity=".35"/><circle r="9" fill="#7b5cf0"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">H</text></g>
+        <g class="hotspot" data-key="harness" transform="translate(410 200)" tabindex="0" role="button" aria-label="ワイヤーハーネス"><circle class="ring" r="14" fill="#e0524d" opacity=".35"/><circle r="9" fill="#e0524d"/><text y="4" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">W</text></g>
+        <text x="40" y="154" font-size="11" fill="#8a94a6" transform="rotate(-90 40 154)" text-anchor="middle">◀ 前</text>
+      </svg>
+      <div id="car-info" class="demo-out" aria-live="polite"><b>図の丸い点</b>に触れてみてください。その部品が車のどこにあり、何をしているかが表示されます。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guide">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">01 — CONTENTS</span>
+      <h2>6つのキーワードを、順番に。</h2>
+      <p>どこから読んでも大丈夫ですが、はじめての方は左上から順に読むと、話がつながって理解しやすくなります。</p>
+    </div>
+    <div class="grid grid-3">
+      <a class="card link-card reveal" href="mcu.html"><span class="tag">01 / MCU</span><h3>マイコン</h3><p>指先サイズの小さなコンピューター。すべての電子制御の出発点です。</p><span class="more">読む →</span></a>
+      <a class="card link-card reveal delay-1" href="ecu.html"><span class="tag">02 / ECU</span><h3>電子制御ユニット</h3><p>マイコンを中心に組み立てた、車の各部分の「司令塔」。</p><span class="more">読む →</span></a>
+      <a class="card link-card reveal delay-2" href="obd.html"><span class="tag">03 / OBD</span><h3>自己診断のしくみ</h3><p>車が自分の不調を記録する機能。2024年から車検にも登場。</p><span class="more">読む →</span></a>
+      <a class="card link-card reveal" href="gyro.html"><span class="tag">04 / GYRO</span><h3>ジャイロセンサー</h3><p>「どれだけ回っているか」を測るセンサー。横滑りを防ぎます。</p><span class="more">読む →</span></a>
+      <a class="card link-card reveal delay-1" href="hub.html"><span class="tag">05 / HUB</span><h3>3つのハブ</h3><p>ネットワーク・USB・車輪のモーター。同じ名前でも中身は別物。</p><span class="more">読む →</span></a>
+      <a class="card link-card reveal delay-2" href="harness.html"><span class="tag">06 / HARNESS</span><h3>ワイヤーハーネス</h3><p>全部をつなぐ配線の束。車の「神経」と「血管」です。</p><span class="more">読む →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="story">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">02 — HOW IT CONNECTS</span>
+      <h2>6つは、1本の物語でつながっている。</h2>
+      <p>ブレーキを踏んだ瞬間、車の中では次のようなリレーが一瞬で行われています。下のボタンで1段ずつ進めてみましょう。</p>
+    </div>
+    <div class="demo reveal">
+      <svg id="relay" viewBox="0 0 900 200" role="img" aria-label="センサーからECU、アクチュエーターまでの情報の流れ">
+        <g font-size="14" text-anchor="middle" fill="#141a24">
+          <g data-step="0"><rect x="10" y="60" width="140" height="80" rx="14" fill="#fff" stroke="#e3e7ee" stroke-width="2"/><text x="80" y="95" font-weight="700">センサー</text><text x="80" y="118" font-size="12" fill="#4a5568">ジャイロ など</text></g>
+          <g data-step="1"><rect x="190" y="60" width="140" height="80" rx="14" fill="#fff" stroke="#e3e7ee" stroke-width="2"/><text x="260" y="95" font-weight="700">ハーネス</text><text x="260" y="118" font-size="12" fill="#4a5568">信号を運ぶ</text></g>
+          <g data-step="2"><rect x="370" y="60" width="160" height="80" rx="14" fill="#fff" stroke="#e3e7ee" stroke-width="2"/><text x="450" y="95" font-weight="700">ECU(中にMCU)</text><text x="450" y="118" font-size="12" fill="#4a5568">計算して判断</text></g>
+          <g data-step="3"><rect x="570" y="60" width="140" height="80" rx="14" fill="#fff" stroke="#e3e7ee" stroke-width="2"/><text x="640" y="95" font-weight="700">アクチュエーター</text><text x="640" y="118" font-size="12" fill="#4a5568">ブレーキが動く</text></g>
+          <g data-step="4"><rect x="750" y="60" width="140" height="80" rx="14" fill="#fff" stroke="#e3e7ee" stroke-width="2"/><text x="820" y="95" font-weight="700">OBD</text><text x="820" y="118" font-size="12" fill="#4a5568">異常を記録</text></g>
+        </g>
+        <g stroke="#cfd6e2" stroke-width="2" marker-end="url(#arr)"><path d="M150 100h36"/><path d="M330 100h36"/><path d="M530 100h36"/><path d="M710 100h36"/></g>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#cfd6e2"/></marker></defs>
+        <circle id="relay-dot" r="7" cx="80" cy="40" fill="#e0524d"/>
+      </svg>
+      <div class="demo-controls"><button class="btn" id="relay-next" type="button">次へ進む →</button><button class="btn ghost" id="relay-reset" type="button">最初から</button></div>
+      <div id="relay-text" class="demo-out">「次へ進む」を押してください。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="numbers">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">03 — BY THE NUMBERS</span>
+      <h2>数字で見る、車の電子化。</h2>
+      <p>「車=機械」というイメージは、もう半分しか当たっていません。</p>
+    </div>
+    <div class="stats reveal">
+      <div><span class="num" data-count="100">0</span><span class="unit">個以上</span><div class="label">最新の高級車に積まれるECUの数</div><div class="src">出典:MONOist</div></div>
+      <div><span class="num" data-count="1200">0</span><span class="unit">回路</span><div class="label">自動車用ハーネスの回路数(800〜1,200)</div><div class="src">出典:静岡労働局 資料</div></div>
+      <div><span class="num" data-count="4">0</span><span class="unit">km</span><div class="label">大型・高級車の電線をつなげた長さ</div><div class="src">出典:SAE International</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="tips">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">04 — HOW TO LEARN</span>
+      <h2>略語は「分解」すれば怖くない。</h2>
+      <p>電子機器の世界はアルファベット3文字だらけです。でも、1文字ずつ英単語に戻して日本語にすると、名前そのものが説明になっています。</p>
+    </div>
+    <div class="tabs reveal">
+      <div class="tab-list" role="tablist" aria-label="略語の分解例">
+        <button class="tab-btn" role="tab" id="t-ecu" aria-controls="p-ecu" aria-selected="true">ECU</button>
+        <button class="tab-btn" role="tab" id="t-mcu" aria-controls="p-mcu" aria-selected="false" tabindex="-1">MCU</button>
+        <button class="tab-btn" role="tab" id="t-obd" aria-controls="p-obd" aria-selected="false" tabindex="-1">OBD</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p-ecu" aria-labelledby="t-ecu">
+        <div class="grid grid-3">
+          <div class="card"><h3>E — Electronic</h3><p>電子の/電子式の</p></div>
+          <div class="card"><h3>C — Control</h3><p>制御(思いどおりに動かすこと)</p></div>
+          <div class="card"><h3>U — Unit</h3><p>ひとまとまりの装置</p></div>
+        </div>
+        <p class="mt-32">→ つなげると「<b style="color:#fff">電子で制御する装置</b>」。名前がそのまま役割です。</p>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p-mcu" aria-labelledby="t-mcu" hidden>
+        <div class="grid grid-3">
+          <div class="card"><h3>M — Micro</h3><p>とても小さい</p></div>
+          <div class="card"><h3>C — Controller</h3><p>制御するもの</p></div>
+          <div class="card"><h3>U — Unit</h3><p>ひとまとまりの装置</p></div>
+        </div>
+        <p class="mt-32">→ 「<b style="color:#fff">小さな制御装置</b>」。日本では「マイコン」と呼ぶのが一般的です。</p>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p-obd" aria-labelledby="t-obd" hidden>
+        <div class="grid grid-3">
+          <div class="card"><h3>O — On</h3><p>〜の上に</p></div>
+          <div class="card"><h3>B — Board</h3><p>(車に)載せた</p></div>
+          <div class="card"><h3>D — Diagnostics</h3><p>診断</p></div>
+        </div>
+        <p class="mt-32">→ 「<b style="color:#fff">車に載っている診断装置</b>」。正式には「車載式故障診断装置」といいます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://monoist.itmedia.co.jp/mn/articles/0901/23/news133.html" target="_blank" rel="noopener">MONOist「電子部品の信頼性とカーエレクトロニクスの将来」</a></li>
+      <li><a href="https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/content/contents/R7kochin_1_9.pdf" target="_blank" rel="noopener">静岡労働局「自動車用ワイヤーハーネスの製造等の概要」(令和7年12月)</a></li>
+      <li><a href="https://saemobilus.sae.org/content/20AVEP01_05" target="_blank" rel="noopener">SAE International "Wired for Autonomy" (2020)</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><span></span><a class="next" href="mcu.html"><small>NEXT →</small>MCU</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

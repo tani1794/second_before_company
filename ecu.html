@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECU(電子制御ユニット)とは?車の司令塔|ONEV ALLEY STATION</title>
+<meta name="description" content="ECU(電子制御ユニット)が車の中で何をしているのか、センサー・アクチュエーター・CAN通信との関係を図でやさしく解説します。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/ecu.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="ECU(電子制御ユニット)とは?車の司令塔|ONEV ALLEY STATION">
+<meta property="og:description" content="ECU(電子制御ユニット)が車の中で何をしているのか、センサー・アクチュエーター・CAN通信との関係を図でやさしく解説します。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/ecu.html">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ECU(電子制御ユニット)とは?車の司令塔", "description": "ECU(電子制御ユニット)が車の中で何をしているのか、センサー・アクチュエーター・CAN通信との関係を図でやさしく解説します。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/ecu.html", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html" aria-current="page">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="breadcrumb" aria-label="現在地"><a href="index.html">ホーム</a><span>/</span>ECU</nav>
+      <span class="eyebrow">02 — ECU</span>
+      <h1>ECU<br><span class="accent">クルマの小さな司令塔たち</span></h1>
+      <p class="lead">ECU(イーシーユー)は、エンジン・ブレーキ・エアバッグなど、車の機能ごとに置かれた「専用コンピューター」です。中には<a href="mcu.html">MCU(マイコン)</a>が入っていて、センサーから届く情報をもとに一瞬で判断し、部品に指示を出しています。</p>
+      <div class="abbr-box">
+        <div class="piece"><b>E</b><span>Electronic</span><em>電子の</em></div>
+        <div class="piece"><b>C</b><span>Control</span><em>制御</em></div>
+        <div class="piece"><b>U</b><span>Unit</span><em>装置</em></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg viewBox="0 0 320 240" role="img" aria-label="ECUの外観イラスト">
+        <rect x="40" y="50" width="240" height="150" rx="16" fill="#e9edf4" stroke="#cfd6e2" stroke-width="2"/>
+        <g stroke="#cfd6e2" stroke-width="2"><path d="M60 70h200M60 85h200M60 100h200"/></g>
+        <rect x="110" y="120" width="100" height="56" rx="8" fill="#0e1726"/>
+        <text x="160" y="154" text-anchor="middle" fill="#fff" font-size="14" letter-spacing="2">MCU</text>
+        <rect x="250" y="110" width="50" height="70" rx="6" fill="#141a24"/>
+        <g fill="#7b5cf0"><rect x="258" y="120" width="6" height="50" rx="2"/><rect x="270" y="120" width="6" height="50" rx="2"/><rect x="282" y="120" width="6" height="50" rx="2"/></g>
+        <text x="160" y="226" text-anchor="middle" font-size="12" fill="#8a94a6">金属やプラスチックの箱+コネクター</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<nav class="page-tabs" aria-label="このページの目次"><ul>
+  <li><a href="#role">役割</a></li>
+  <li><a href="#types">種類</a></li>
+  <li><a href="#count">いくつある?</a></li>
+  <li><a href="#can">ECU同士の会話</a></li>
+  <li><a href="#future">これから</a></li>
+  <li><a href="#handling">扱い方</a></li>
+  <li><a href="#refs">参考資料</a></li>
+</ul></nav>
+
+<section class="section" id="role">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">01 — ROLE</span>
+      <h2>目・脳・手足の「脳」にあたる。</h2>
+      <p>人の体にたとえると、ECUのまわりは次の3つで成り立っています。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="icon red">目</div><h3><span class="term" data-term="センサー">センサー</span></h3><p>回転数・速度・温度・アクセルの踏み込み量などを測って、電気の信号に変えます。</p></div>
+      <div class="card reveal delay-1"><div class="icon">脳</div><h3>ECU</h3><p>信号を受け取り、プログラムに従って「どれだけ動かすか」を計算・判断します。</p></div>
+      <div class="card reveal delay-2"><div class="icon violet">手</div><h3><span class="term" data-term="アクチュエーター">アクチュエーター</span></h3><p>ECUの指示で実際に動く部品。燃料を吹き出す装置、モーター、ブレーキの油圧装置など。</p></div>
+    </div>
+    <div class="keypoint reveal mt-32"><strong>具体例</strong><p>アクセルを踏む → ペダルのセンサーが踏み込み量を測る → エンジン用ECUが「燃料をこれだけ、このタイミングで」と計算 → 燃料噴射装置が動く。これが1秒間に何度もくり返されます。</p></div>
+  </div>
+</section>
+
+<section class="section alt" id="types">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">02 — TYPES</span>
+      <h2>担当ごとに、たくさんのECUがある。</h2>
+      <p>大きく4つのグループに分けると覚えやすくなります。タブを切り替えてみましょう。</p>
+    </div>
+    <div class="tabs reveal">
+      <div class="tab-list" role="tablist" aria-label="ECUの種類">
+        <button class="tab-btn" role="tab" id="t1" aria-controls="p1" aria-selected="true">走る</button>
+        <button class="tab-btn" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">曲がる・止まる</button>
+        <button class="tab-btn" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">快適・便利</button>
+        <button class="tab-btn" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">情報・通信</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+        <div class="grid grid-3">
+          <div class="card"><h3>エンジン制御</h3><p>燃料の量・噴射のタイミング・アイドリングの回転数などを調整します。</p></div>
+          <div class="card"><h3>変速機(トランスミッション)制御</h3><p>速度に合わせてギアを自動で切り替えます。</p></div>
+          <div class="card"><h3>モーター・電池制御</h3><p>ハイブリッド車や電気自動車で、モーターの力や電池の状態を管理します。</p></div>
+        </div>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+        <div class="grid grid-3">
+          <div class="card"><h3><span class="term" data-term="ABS">ABS</span> / <span class="term" data-term="ESC">横滑り防止</span></h3><p>タイヤのロックや横滑りを防ぎます。<a href="gyro.html">ジャイロセンサー</a>の情報を使います。</p></div>
+          <div class="card"><h3>電動パワーステアリング</h3><p>ハンドル操作をモーターで軽くします。</p></div>
+          <div class="card"><h3>エアバッグ</h3><p>衝突を検知して、一瞬でエアバッグを開かせます。</p></div>
+        </div>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+        <div class="grid grid-3">
+          <div class="card"><h3>エアコン</h3><p>車内の温度を測り、設定温度に近づけます。</p></div>
+          <div class="card"><h3>ボディ制御</h3><p>ドアロック、パワーウインドウ、ライトなどを担当します。</p></div>
+          <div class="card"><h3>シート・ミラー</h3><p>座席やミラーの位置を記憶・調整します。</p></div>
+        </div>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+        <div class="grid grid-3">
+          <div class="card"><h3>メーター</h3><p>速度や警告灯を表示します。</p></div>
+          <div class="card"><h3>ナビ・オーディオ</h3><p>地図や音楽、スマホとの連携を担当します。</p></div>
+          <div class="card"><h3>ゲートウェイ</h3><p>車内のネットワーク同士をつなぐ「交通整理係」。診断機との窓口にもなります。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="count">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">03 — HOW MANY</span>
+      <h2>1台に、いくつ載っている?</h2>
+      <p>答えは「車による」。資料によって数え方や時期が違いますが、どの資料も<b>数十個〜100個以上</b>という点では一致しています。</p>
+      <p>一方で、ECUをまとめて数を減らす動きもあります。テスラの「モデル3」は、ECUを数個にまとめたことで専門家を驚かせました。</p>
+      <p class="muted">※ グラフの数値は、それぞれ出典の資料が示した目安です。</p>
+    </div>
+    <div class="demo reveal delay-1">
+      <div class="bar-chart">
+        <div class="bar-row"><span>統合型の例(テスラ モデル3)</span><div class="bar-track"><div class="bar-fill" data-width="4"></div></div><span class="val">数個</span></div>
+        <div class="bar-row"><span>2018年ごろの平均</span><div class="bar-track"><div class="bar-fill" data-width="18"></div></div><span class="val">約20</span></div>
+        <div class="bar-row"><span>一般的な車(2009年の解説)</span><div class="bar-track"><div class="bar-fill" data-width="28"></div></div><span class="val">30+</span></div>
+        <div class="bar-row"><span>一般的な車(2022年の専門家談)</span><div class="bar-track"><div class="bar-fill" data-width="55"></div></div><span class="val">60+</span></div>
+        <div class="bar-row"><span>最新の高級車</span><div class="bar-track"><div class="bar-fill" data-width="92"></div></div><span class="val">100+</span></div>
+      </div>
+      <p class="muted" style="margin:16px 0 0">出典:日刊工業新聞(ニュースイッチ)2018年、MONOist 2009年、東洋経済オンライン 2022年</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="can">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">04 — CAN</span>
+      <h2>ECU同士は「CAN」で会話する。</h2>
+      <p>たくさんのECUを1台ずつ電線でつなぐと、配線がとんでもない量になります。そこで、<b style="color:#fff">2本の電線</b>を共有して全員が会話する方法が考えられました。それが<span class="term" data-term="CAN">CAN(キャン)</span>です。</p>
+    </div>
+    <div class="split">
+      <div class="reveal">
+        <ul class="timeline" style="color:#e8edf6">
+          <li><span class="year" style="color:#fff">1983</span><p>ドイツのボッシュ社が、車の配線を減らすための新しい通信方式の開発を始める。</p></li>
+          <li class="hl"><span class="year" style="color:#fff">1986</span><p>アメリカの自動車技術者の学会(SAE)で、ボッシュがCANを発表。</p></li>
+          <li><span class="year" style="color:#fff">1991</span><p>メルセデス・ベンツの高級車「Sクラス(W140)」が、市販車として初めてCANを採用。</p></li>
+          <li><span class="year" style="color:#fff">1993</span><p>国際規格(ISO 11898)になり、世界中に広がる。</p></li>
+          <li><span class="year" style="color:#fff">2012</span><p>より多くのデータを速く送れる「CAN FD」が登場。</p></li>
+        </ul>
+      </div>
+      <div class="reveal delay-1">
+        <div class="demo" style="color:var(--ink)">
+          <h3 style="font-size:17px">体験:同時に話したらどうなる?</h3>
+          <p style="font-size:14px;color:var(--ink-2)">CANでは、メッセージごとに番号(ID)が付いていて、<b>番号が小さいほど優先</b>されます。3つのECUが同時に送信すると…?</p>
+          <svg id="can-demo" viewBox="0 0 420 190" role="img" aria-label="CANバスでの優先順位のデモ">
+            <g stroke="#e0524d" stroke-width="3"><path d="M20 120h380"/></g>
+            <g stroke="#3a6fe0" stroke-width="3"><path d="M20 132h380"/></g>
+            <text x="22" y="156" font-size="11" fill="#8a94a6">CAN-H / CAN-L(2本の電線)</text>
+            <g font-size="12" text-anchor="middle">
+              <g class="can-node" data-id="256"><rect x="20" y="20" width="110" height="60" rx="12" fill="#fff" stroke="#cfd6e2" stroke-width="2"/><text x="75" y="45" font-weight="700">エンジン</text><text x="75" y="64" fill="#4a5568">ID 256</text><path d="M75 80v40" stroke="#cfd6e2" stroke-width="2"/></g>
+              <g class="can-node" data-id="80"><rect x="155" y="20" width="110" height="60" rx="12" fill="#fff" stroke="#cfd6e2" stroke-width="2"/><text x="210" y="45" font-weight="700">ブレーキ</text><text x="210" y="64" fill="#4a5568">ID 80</text><path d="M210 80v40" stroke="#cfd6e2" stroke-width="2"/></g>
+              <g class="can-node" data-id="768"><rect x="290" y="20" width="110" height="60" rx="12" fill="#fff" stroke="#cfd6e2" stroke-width="2"/><text x="345" y="45" font-weight="700">エアコン</text><text x="345" y="64" fill="#4a5568">ID 768</text><path d="M345 80v40" stroke="#cfd6e2" stroke-width="2"/></g>
+            </g>
+            <circle id="can-msg" r="8" cx="-20" cy="126" fill="#7b5cf0"/>
+          </svg>
+          <div class="demo-controls"><button class="btn" id="can-send" type="button">3台同時に送信</button></div>
+          <div id="can-out" class="demo-out">ボタンを押してください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="future">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">05 — NEXT</span>
+      <h2>「バラバラ」から「まとめる」時代へ。</h2>
+      <p>ECUが増えすぎると、配線が重く複雑になり、ソフトの管理も大変になります。そこで今は、少数の高性能なECUに仕事をまとめる設計が進んでいます。</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><span class="badge">これまで</span><h3 style="margin-top:12px">機能ごとに1つずつ</h3><p>エンジン用、ブレーキ用、窓用…と、機能が増えるたびにECUも増やす方式。</p></div>
+      <div class="card reveal delay-1"><span class="badge violet">これから</span><h3 style="margin-top:12px"><span class="term" data-term="ゾーンアーキテクチャ">ゾーン型</span>・統合型</h3><p>車を区域(ゾーン)に分けて近くの部品をまとめて管理し、中央の高性能コンピューターが全体を指揮する方式。配線とECUの数を減らせます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="handling">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">06 — HANDLING</span>
+      <h2>ECUのまわりで作業するときは。</h2>
+      <p>基本的な考え方です。実際の作業は、必ず車両メーカーの整備書と職場の手順に従ってください。</p>
+    </div>
+    <ol class="steps reveal">
+      <li><b>作業前に、車のバッテリーのマイナス端子を外す</b><span>ECUの取り外しやコネクターの抜き差しで、電気が流れたままだと故障の原因になります。外す順番・時間の指定は整備書で確認しましょう。</span></li>
+      <li><b>コネクターは「ロックを外して、本体を持って」抜く</b><span>電線を引っ張ると、中で断線することがあります。<a href="harness.html#handling">ハーネスのページ</a>も参考に。</span></li>
+      <li><b>コネクターの穴に、テスターの針を無理に差し込まない</b><span>端子が広がって接触不良になります。専用の測定用アダプターを使います。</span></li>
+      <li><b>水と衝撃から守る</b><span>ECUは防水・防振設計ですが、カバーを開けた状態や落下には弱い部品です。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://monoist.itmedia.co.jp/mn/articles/0901/23/news133.html" target="_blank" rel="noopener">MONOist「電子部品の信頼性とカーエレクトロニクスの将来」(2009年)</a></li>
+      <li><a href="https://newswitch.jp/p/11742" target="_blank" rel="noopener">ニュースイッチ(日刊工業新聞)2018年1月19日の記事</a></li>
+      <li><a href="https://toyokeizai.net/articles/-/572248" target="_blank" rel="noopener">東洋経済オンライン(テスラ モデル3のECUについて)</a></li>
+      <li><a href="https://monoist.itmedia.co.jp/mn/spv/1010/29/news122.html" target="_blank" rel="noopener">MONOist 車載ネットワークの進化に関する記事</a></li>
+      <li><a href="https://www.can-cia.org/can-knowledge/history-of-can-technology" target="_blank" rel="noopener">CAN in Automation (CiA) "History of CAN technology"</a></li>
+      <li><a href="https://www.slashgear.com/2257973/when-why-did-automakers-switch-to-can-bus-systems-for-vehicles/" target="_blank" rel="noopener">SlashGear "When (And Why) Did Automakers Switch To CAN Bus Systems"</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><a href="mcu.html"><small>← PREV</small>MCU</a><a class="next" href="obd.html"><small>NEXT →</small>OBD</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ecu.js"></script>
+</body>
+</html>

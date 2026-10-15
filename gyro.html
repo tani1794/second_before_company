@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ジャイロセンサーとは?回転を測るしくみ|ONEV ALLEY STATION</title>
+<meta name="description" content="ジャイロセンサー(角速度センサー)が回転を測るしくみと、横滑り防止装置での使われ方を、動く図でやさしく解説します。">
+<link rel="canonical" href="https://tani1794.github.io/second_before_company/gyro.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ONEV ALLEY STATION">
+<meta property="og:title" content="ジャイロセンサーとは?回転を測るしくみ|ONEV ALLEY STATION">
+<meta property="og:description" content="ジャイロセンサー(角速度センサー)が回転を測るしくみと、横滑り防止装置での使われ方を、動く図でやさしく解説します。">
+<meta property="og:url" content="https://tani1794.github.io/second_before_company/gyro.html">
+<meta property="og:image" content="https://tani1794.github.io/second_before_company/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1726">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ジャイロセンサーとは?回転を測るしくみ", "description": "ジャイロセンサー(角速度センサー)が回転を測るしくみと、横滑り防止装置での使われ方を、動く図でやさしく解説します。", "inLanguage": "ja", "url": "https://tani1794.github.io/second_before_company/gyro.html", "isPartOf": {"@type": "WebSite", "name": "ONEV ALLEY STATION", "url": "https://tani1794.github.io/second_before_company/"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="ONEV ALLEY STATION ホームへ"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#0e1726" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#0e1726" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION — 電子機器のまなび場</small></span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav"><span></span><span></span><span></span></button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー"><ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html" aria-current="page">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="breadcrumb" aria-label="現在地"><a href="index.html">ホーム</a><span>/</span>ジャイロ</nav>
+      <span class="eyebrow">04 — GYRO SENSOR</span>
+      <h1>ジャイロセンサー<br><span class="accent">「回転」を感じる小さな感覚器</span></h1>
+      <p class="lead">ジャイロセンサーは、物が「どれくらいの速さで回っているか」を測るセンサーです。正式には<span class="term" data-term="角速度">角速度</span>センサーといいます。スマートフォンの画面の向き、ドローンの姿勢、そして車の横滑り防止に欠かせない部品です。</p>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <svg viewBox="0 0 320 240" role="img" aria-label="3つの回転軸のイラスト">
+        <g fill="none" stroke-width="2.5">
+          <ellipse cx="160" cy="120" rx="100" ry="34" stroke="#3a6fe0"/>
+          <ellipse cx="160" cy="120" rx="34" ry="100" stroke="#7b5cf0"/>
+          <circle cx="160" cy="120" r="70" stroke="#e0524d" stroke-dasharray="4 6"/>
+        </g>
+        <rect x="140" y="100" width="40" height="40" rx="8" fill="#0e1726"/>
+        <g font-size="12" fill="#4a5568"><text x="268" y="124">ヨー</text><text x="150" y="16">ピッチ</text><text x="232" y="60">ロール</text></g>
+        <g transform="rotate(0 160 120)"><circle cx="260" cy="120" r="5" fill="#3a6fe0"><animateTransform attributeName="transform" type="rotate" from="0 160 120" to="360 160 120" dur="6s" repeatCount="indefinite"/></circle></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<nav class="page-tabs" aria-label="このページの目次"><ul>
+  <li><a href="#about">ひとことで</a></li>
+  <li><a href="#principle">測るしくみ</a></li>
+  <li><a href="#esc">車での活躍</a></li>
+  <li><a href="#history">歴史と実物</a></li>
+  <li><a href="#handling">扱い方</a></li>
+  <li><a href="#refs">参考資料</a></li>
+</ul></nav>
+
+<section class="section" id="about">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">01 — IN A WORD</span>
+      <h2>「1秒間に何度回ったか」を数える。</h2>
+      <p>ジャイロセンサーの答えは「◯◯度/秒(°/s)」という数字です。たとえば車が交差点を4秒かけて90度曲がったら、平均で約22度/秒になります。</p>
+      <p>回転には3つの向きがあります。車で特に大事なのは、上から見て左右に向きを変える<b>「ヨー」</b>の回転。この速さを<b>ヨーレート</b>と呼びます。</p>
+    </div>
+    <div class="reveal delay-1">
+      <div class="table-wrap"><table style="min-width:0">
+        <tr><th>回転の名前</th><th>車でいうと</th></tr>
+        <tr><td><b style="color:var(--blue)">ヨー</b></td><td>左右に向きを変える(カーブ、スピン)</td></tr>
+        <tr><td><b style="color:var(--violet)">ピッチ</b></td><td>前後に傾く(急ブレーキでおじぎする)</td></tr>
+        <tr><td><b style="color:var(--red)">ロール</b></td><td>左右に傾く(横転しそうになる)</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="principle">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">02 — PRINCIPLE</span>
+      <h2>震えるおもりと「コリオリの力」。</h2>
+      <p>今の車やスマホのジャイロは、ほとんどが<span class="term" data-term="MEMS">MEMS(メムス)</span>という技術で作られています。チップの中で小さなおもりを左右に細かく震わせておき、そこに回転が加わると、おもりが<b>横(震えと直角の向き)にずれる</b>現象を利用します。このずれを生む力を<span class="term" data-term="コリオリの力">コリオリの力</span>といいます。</p>
+    </div>
+    <div class="split">
+      <div class="demo reveal">
+        <svg id="mems" viewBox="0 0 360 300" role="img" aria-label="MEMSジャイロの動作アニメーション">
+          <g id="mems-frame">
+            <rect x="40" y="30" width="280" height="240" rx="18" fill="#fff" stroke="#cfd6e2" stroke-width="2"/>
+            <rect x="70" y="40" width="220" height="14" rx="4" fill="#edf2fd"/><text x="180" y="51" text-anchor="middle" font-size="10" fill="#3a6fe0">検出電極(ずれを測る)</text>
+            <rect x="70" y="246" width="220" height="14" rx="4" fill="#edf2fd"/>
+            <rect x="50" y="110" width="14" height="80" rx="4" fill="#f2effe"/><rect x="296" y="110" width="14" height="80" rx="4" fill="#f2effe"/>
+            <text x="57" y="205" text-anchor="middle" font-size="10" fill="#7b5cf0">駆動</text>
+            <g stroke="#b9c3d6" stroke-width="1.5" fill="none" id="mems-springs"></g>
+            <rect id="mems-mass" x="150" y="120" width="60" height="60" rx="8" fill="#0e1726"/>
+          </g>
+        </svg>
+        <div class="demo-controls"><label>回転の速さ <input type="range" id="mems-rate" min="-100" max="100" value="0"></label><span id="mems-val" class="badge">0 °/s</span></div>
+        <div id="mems-out" class="demo-out">回転なし:おもりは左右に震えているだけです。スライダーを動かしてみましょう。</div>
+      </div>
+      <div class="reveal delay-1">
+        <h3>流れを整理すると</h3>
+        <ol class="steps">
+          <li><b>おもりを震わせる</b><span>電気の力で、おもりを左右に1秒間に何千回も往復させます。</span></li>
+          <li><b>回転するとコリオリの力が働く</b><span>本体が回ると、動いているおもりに「進む向きと直角」の力がかかり、上下にもずれます。</span></li>
+          <li><b>ずれを電気で測る</b><span>おもりと電極のすきまが変わると、電気のたまり方(静電容量)が変わります。これを数字にします。</span></li>
+          <li><b>ずれの大きさ=回転の速さ</b><span>速く回るほど大きくずれ、回る向きが逆ならずれる向きも逆になります。</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="esc">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">03 — IN THE CAR</span>
+      <h2>横滑り防止装置(ESC)の「目」になる。</h2>
+      <p><span class="term" data-term="ESC">ESC</span>は、ハンドルの切れ角から「運転者が曲がりたい量」を計算し、ジャイロが測った「実際に曲がっている量(ヨーレート)」と比べます。ずれていたら、タイヤ1本ずつにブレーキをかけて車の向きを立て直します。</p>
+    </div>
+    <div class="split">
+      <div class="demo reveal">
+        <svg id="esc-demo" viewBox="0 0 360 300" role="img" aria-label="横滑り防止装置のシミュレーション">
+          <path id="esc-road" d="M60 290 C60 160 140 70 300 60" fill="none" stroke="#e3e7ee" stroke-width="46" stroke-linecap="round"/>
+          <path id="esc-ideal" d="M60 290 C60 160 140 70 300 60" fill="none" stroke="#3a6fe0" stroke-width="2" stroke-dasharray="6 6"/>
+          <path id="esc-actual" fill="none" stroke="#e0524d" stroke-width="3"/>
+          <g id="esc-car"><rect x="-12" y="-20" width="24" height="40" rx="6" fill="#0e1726"/>
+            <rect id="w-fl" x="-16" y="-17" width="5" height="10" rx="2" fill="#8a94a6"/><rect id="w-fr" x="11" y="-17" width="5" height="10" rx="2" fill="#8a94a6"/>
+            <rect id="w-rl" x="-16" y="7" width="5" height="10" rx="2" fill="#8a94a6"/><rect id="w-rr" x="11" y="7" width="5" height="10" rx="2" fill="#8a94a6"/></g>
+          <g font-size="11"><text x="16" y="20" fill="#3a6fe0">--- 曲がりたい線</text><text x="16" y="36" fill="#e0524d">— 実際の進路</text></g>
+        </svg>
+        <div class="demo-controls">
+          <label>路面 <select id="esc-road-sel" style="font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--line)"><option value="1">乾いた路面</option><option value="0.6">雨の路面</option><option value="0.3">雪の路面</option></select></label>
+          <label>状況 <select id="esc-type" style="font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--line)"><option value="under">前輪が滑って外へふくらむ</option><option value="over">後輪が滑って内へ巻き込む</option></select></label>
+          <label><input type="checkbox" id="esc-on" checked> ESCを作動</label>
+        </div>
+        <div class="demo-controls"><button class="btn" id="esc-run" type="button">走らせる ▶</button></div>
+        <div id="esc-out" class="demo-out">条件を選んで「走らせる」を押してください。</div>
+      </div>
+      <div class="reveal delay-1">
+        <div class="table-wrap"><table style="min-width:0">
+          <tr><th>状態</th><th>ジャイロの値</th><th>ESCの対応(例)</th></tr>
+          <tr><td><b>アンダーステア</b><br><span class="muted">外へふくらむ</span></td><td>曲がりたい量より<b>小さい</b></td><td>内側の後輪にブレーキ → 車を内側へ向ける</td></tr>
+          <tr><td><b>オーバーステア</b><br><span class="muted">内へ巻き込む・スピン</span></td><td>曲がりたい量より<b>大きい</b></td><td>外側の前輪にブレーキ → 回りすぎを止める</td></tr>
+        </table></div>
+        <div class="keypoint violet mt-32"><strong>ほかの使い道</strong><p>ジャイロは「横転しそうな傾き」を見張り、側面のカーテンエアバッグを開かせる装置にも使われます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="history">
+  <div class="container split">
+    <div class="reveal">
+      <span class="section-num">04 — HISTORY &amp; SPEC</span>
+      <h2>ブレーキの進化とともに。</h2>
+      <ul class="timeline">
+        <li><span class="year">1978</span><p>ドイツのボッシュ社がABS(タイヤのロック防止)を世界で初めて市場に出す。</p></li>
+        <li><span class="year">1986</span><p>同社がTCS(発進時の空転防止)を投入。</p></li>
+        <li class="hl"><span class="year">1995</span><p>ESC(横滑り防止)が登場。ジャイロセンサーが欠かせない部品に。当初のセンサーは機械式。</p></li>
+        <li><span class="year">1998〜</span><p>ボッシュがMEMS方式のセンサーを採用。小型化・低価格化が進む。</p></li>
+      </ul>
+    </div>
+    <div class="reveal delay-1">
+      <h3>実物のスペック例</h3>
+      <p>村田製作所が2020年に発表した車載用MEMSセンサー(SCC3000系)の主な仕様です。</p>
+      <div class="table-wrap"><table style="min-width:0">
+        <tr><th>項目</th><th>値</th><th>意味</th></tr>
+        <tr><td>測れる回転の速さ</td><td>±300°/s</td><td>1秒で300度(ほぼ1回転)まで</td></tr>
+        <tr><td>動作する温度</td><td>−40〜110℃</td><td>真冬の寒冷地から真夏のエンジン近くまで</td></tr>
+        <tr><td>電源電圧</td><td>3.0〜3.6V</td><td>乾電池2本分くらい</td></tr>
+        <tr><td>安全規格</td><td>ISO 26262 ASIL D 対応</td><td>車の安全規格で最も厳しいレベルのシステムに使える</td></tr>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="handling">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">05 — HANDLING</span>
+      <h2>扱うときに気をつけたいこと。</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="icon red">!</div><h3>落とさない</h3><p>中のおもりは非常に細かい構造です。外から見て無傷でも、強い衝撃で特性が変わることがあります。落としたものは使わないのが原則です。</p></div>
+      <div class="card reveal delay-1"><div class="icon">↻</div><h3>向きを守る</h3><p>どの軸の回転を測るかが決まっているため、取り付けの向き・位置は指定どおりに。ずれると正しく測れません。</p></div>
+      <div class="card reveal delay-2"><div class="icon violet">0</div><h3>交換後は「初期設定」</h3><p>車では、センサーやECUを交換した後に「ゼロ点の学習(調整)」が必要な場合があります。手順は整備書で確認します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="refs">
+  <div class="container">
+    <div class="section-head reveal"><span class="section-num">REFERENCES</span><h2>参考資料</h2></div>
+    <ol class="refs">
+      <li><a href="https://monoist.itmedia.co.jp/mn/articles/0809/01/news133_4.html" target="_blank" rel="noopener">MONOist「最新センサーデバイスが変える予防安全システム」</a></li>
+      <li><a href="https://eetimes.itmedia.co.jp/ee/articles/2005/14/news034.html" target="_blank" rel="noopener">EE Times Japan「村田製作所、3D MEMS慣性力センサー製品を拡充」(2020年)</a></li>
+      <li><a href="https://www.logi-today.com/4017" target="_blank" rel="noopener">LOGISTICS TODAY「エプソントヨコム、自動車の横滑り防止へ新ジャイロセンサを開発」(2010年)</a></li>
+      <li><a href="https://news.mynavi.jp/article/20190822-880414" target="_blank" rel="noopener">マイナビニュース(車載用MEMSセンサーの分類)</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><nav class="pager" aria-label="前後のページ"><a href="obd.html"><small>← PREV</small>OBD</a><a class="next" href="hub.html"><small>NEXT →</small>ハブ</a></nav></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="url(#lg)"/><g stroke="#ffffff" stroke-width="2" stroke-linecap="round"><path d="M12 3v4M20 3v4M12 25v4M20 25v4M3 12h4M3 20h4M25 12h4M25 20h4"/></g><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6fe0"/><stop offset="1" stop-color="#7b5cf0"/></linearGradient></defs></svg><span>ONEV ALLEY<small>STATION</small></span></a>
+        <p style="margin-top:16px">はじめて電子機器を扱う人のための、車の電子機器入門サイト。</p>
+      </div>
+      <ul class="footer-links">
+<li><a href="index.html">ホーム</a></li>
+<li><a href="mcu.html">MCU</a></li>
+<li><a href="ecu.html">ECU</a></li>
+<li><a href="obd.html">OBD</a></li>
+<li><a href="gyro.html">ジャイロ</a></li>
+<li><a href="hub.html">ハブ</a></li>
+<li><a href="harness.html">ハーネス</a></li>
+<li><a href="glossary.html">用語検索</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ONEV ALLEY STATION</span>
+      <span>掲載内容は各ページ下部の参考資料をもとに作成しています。実際の作業は必ず各機器・車両の取扱説明書や整備書に従ってください。</span>
+    </div>
+  </div>
+</footer>
+
+<button class="search-fab" type="button" aria-haspopup="dialog">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>用語を調べる
+</button>
+<div class="search-drawer" role="dialog" aria-modal="true" aria-label="用語を調べる">
+  <div class="backdrop"></div>
+  <div class="panel">
+    <button class="close" type="button" aria-label="閉じる">×</button>
+    <h3>用語を調べる</h3>
+    <p class="muted">わからない言葉を入れてください。サイト内の用語集と、インターネット(Wikipedia日本語版)から探します。</p>
+    <form class="search-box" data-out="drawer-results" role="search">
+      <input type="search" placeholder="例:CAN、コネクター、ヨーレート" aria-label="調べたい用語">
+      <button type="submit">調べる</button>
+    </form>
+    <div class="chips"><button type="button" class="chip">ECU</button><button type="button" class="chip">CAN</button><button type="button" class="chip">マイコン</button><button type="button" class="chip">テスター</button></div>
+    <div id="drawer-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="js/glossary-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gyro.js"></script>
+</body>
+</html>
